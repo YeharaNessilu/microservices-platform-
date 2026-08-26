@@ -1,0 +1,18 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: native # Local file system එකෙන් configs ගන්නා බව දැක්වීමට
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config # කලින් හැදූ config folder එකේ path එක
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
